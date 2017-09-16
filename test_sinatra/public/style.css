@@ -1,0 +1,124 @@
+nav.blog-nav.bigger > a { font-size: 20px; }
+
+article, aside, figure, footer, header, hgroup, menu, nav, section { display: block }
+
+section {
+    background: #ddd;
+    padding-right: 85px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    height: 100%;
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+.comment {
+    overflow: hidden;
+    padding: 0 0 1em;
+    border-bottom: 1px solid #bbb;
+    margin: 0px 0 1em;
+    margin-left: 40px;
+    zoom: 1;
+    width: 100%;
+}
+
+.comment-img {
+    float: left;
+    margin-right: 36px;
+    border-radius: 5px;
+    overflow: hidden;
+    cursor: default;
+}
+
+.comment-img img { display: block }
+
+.comment-body { overflow: hidden; float: left; width: 75%; }
+
+.comment .text {
+    padding: 15px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background: #fff;
+    float: left;
+    width: 83%;
+}
+
+.comment .text p:last-child { margin: 0 }
+
+.comment .attribution {
+    margin: 0.5em 0 0;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Decoration */
+
+.comments, .comment { position: relative }
+
+.comments:before, .comment:before, .comment .text:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 65px;
+}
+
+.comments:before {
+    width: 3px;
+    left: 105px;
+    bottom: 0px;
+    background: rgba(0,0,0,0.1);
+}
+
+.comment:before {
+    width: 12px;
+    height: 12px;
+    border: 2px solid #fff;
+    border-radius: 100px;
+    margin: 18px 0 0 -3px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
+    background: #555;
+}
+
+.comment:hover:before { background: #3b5998 }
+
+.comment .text:before {
+    top: 18px;
+    left: 81px;
+    width: 9px;
+    height: 9px;
+    border-width: 0 0 1px 1px;
+    border-style: solid;
+    border-color: #555;
+    background: #fff;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+}
+/*           UPVOTE AND DOWNVOTE                  */
+
+.vote_box {
+    float: right;
+}
+
+.vote_number, .vote_arrows {
+ display:inline-block;
+ font-size: 18px;
+}
+.vote_number {
+ vertical-align:middle;
+ margin: 0 5px 28px 0px;
+}
+
+.up:hover {
+    color: #33cc33;
+    cursor: pointer;
+}
+
+.down:hover {
+    color: #cc3333;
+    cursor: pointer;
+}

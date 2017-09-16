@@ -1,0 +1,50 @@
+<div class="blog-header">
+  <div class="container">
+    <h1 class="blog-title">Skello Blog</h1>
+    <p class="lead blog-description">Un super blog pour une super startup</p>
+  </div>
+</div>
+<hr>
+<div class="row">
+
+  <div class="col-sm-8 blog-main">
+      <% @database.each_with_index do |d,i| %>
+        <div class="blog-post">
+          <h2 class="blog-post-title"><%= d[:title].to_s %></h2>
+          <p class="blog-post-meta">
+          <!-- rating stars -->
+          <% if d[:rating] %>
+            <% for j in 1..d[:rating].to_i %>
+              <i class="fa fa-star" aria-hidden="true"></i>
+            <% end %>
+          <% else %>
+            <span>Pas de note pour cet article</span>
+          <% end %>
+         </p>
+         <% if d[:photo] %>
+          <img src="<%= d[:photo] %>" class="img-thumbnail" style="max-height: 80px; float: left; margin-right: 20px;">
+         <% end %>
+          <p>
+            <%= d[:content][0..90].to_s %> ...
+          </p>
+          <p><a href="/article/<%= i %>">En savoir plus</a></p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+    <div class="sidebar-module sidebar-module-inset">
+      <h4>À propos</h4>
+      <p>Grâce à Skello, gérez vos plannings de façon simple et intelligente, et partagez-les en temps réel avec vos collaborateurs.</p>
+    </div>
+    <div class="sidebar-module">
+      <h4>On parle de nous</h4>
+      <ol class="list-unstyled">
+        <li><a href="https://www.skello.io">Notre site</a></li>
+        <li><a href="http://tempsreel.nouvelobs.com/economie/20170414.OBS8025/skello-la-start-up-qui-libere-les-restaurateurs.html">Nouvel Obs</a></li>
+        <li><a href="https://www.frenchweb.fr/skello-veut-resoudre-les-casse-tetes-rh-des-restaurateurs/261377">Frenchweb</a></li>
+        <li><a href="https://www.challenges.fr/start-up/skello-la-start-up-qui-regle-les-question-de-rh-dans-la-restauration_464757">Challenges.fr</a></li>
+      </ol>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="blog-header">
+  <div class="container">
+    <h1 style="font-size: 3em; margin-top: 30px;"><%= @post[:title] %></h1>
+    <p>
+      <% for j in 1..@post[:rating].to_i %>
+        <i class="fa fa-star" aria-hidden="true"></i>
+      <% end %>
+  </p>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-sm-12 blog-main">
+    <div class="blog-post">
+     <% if @post[:photo] %>
+      <img src="<%= @post[:photo] %>" class="img-thumbnail img-responsive " style="max-height: 250px; margin-bottom: 30px">
+     <% end %>
+      <p>
+        <%= @post[:content] %>
+      </p>
+    </div>
+  </div>
+</div>
+<hr>
+
+<section class="comments">
+  <% @comments.each_with_index do |comment, i| %>
+    <article class="comment">
+      <a class="comment-img" href="anonym">
+        <img src="https://www.w3schools.com/bootstrap/img_avatar1.png" alt="" width="50" height="50">
+      </a>
+      <div class="comment-body">
+        <div class="text">
+          <p><%= comment %></p>
+        </div>
+    
+        <div class="vote_box">
+          <div class="vote_number" id="vote_<%= i %>"><%= @votes[i] %></div>
+          <div class="vote_arrows">
+            <div class="up" data-comment-id="<%= i %>" data-article-id="<%= params[:id] %>" ><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
+            <div class="down" data-comment-id="<%= i %>" data-article-id="<%= params[:id] %>"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+          </div>
+        </div>
+
+      </div>
+    </article>
+  <% end %>
+</section>​
